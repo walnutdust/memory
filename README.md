@@ -21,3 +21,15 @@ Java.
 Simply clone this repository, compile the java binaries with `javac *.java` as necessary, and run `java Memory`.
 
 ## Screenshots
+
+### Main Menu
+
+![Main Menu](https://github.com/walnutdust/memory/blob/master/Screenshots/mainMenu.png "Main Menu")
+
+### In Game
+
+![In Game](https://github.com/walnutdust/memory/blob/master/Screenshots/inGame.png "In Game")
+
+### Options
+
+![Options](https://github.com/walnutdust/memory/blob/master/Screenshots/options.png "Options")
