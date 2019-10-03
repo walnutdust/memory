@@ -233,7 +233,13 @@ public class Memory {
 
         int[] cardCoordinates = parseCoordinate(input);
 
+        // If the card is already open, throw an exception.
         if (state[cardCoordinates[0]][cardCoordinates[1]] == null) {
+            throw new CustomException(203);
+        }
+
+        // If the card is already selected, throw an exception.
+        if (cardCoordinates[0] == currSelected[0] && cardCoordinates[1] == currSelected[1]) {
             throw new CustomException(203);
         }
 
