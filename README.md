@@ -1,5 +1,3 @@
-# memory
-Java implementation of the game memory
 <h1 align="center">
   Memory
 </h1>
