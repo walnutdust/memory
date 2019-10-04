@@ -4,7 +4,13 @@
 
 Garett Tok, 2019
 
-An implementation of the card game Memory in Java. At the start, a certain number of cards will be flipped upside down, and players take turn to flip open pairs of cards to form matches (same value and same color). If there is a match, the cards are removed from the game. Otherwise, the cards are covered once again. The player with the most number of opened pairs win the game!
+This code repository is a project to implement the game Memory in Java. Rules for the game are as follows:
+
+1. Cards (default 52, or one deck) are placed in a grid, face down.
+1. Players take turn to flip over two cards at a time to form a match (same value and same color).
+1. If there is a match, the cards are removed from the game, and the player is allowed to go again.
+1. Otherwise, the cards are set face down in their original positions.
+1. The game ends when all the cards have been opened. The player with the most number of open pairs win.
 
 ### Features:
 
@@ -29,6 +35,14 @@ To run the program, simply:
 1. Run `java -cp target/Memory-1.jar Memory.App`.
 
 Testing the code can be done by running `mvn test`.
+
+## Discussion
+
+This project was made with Java in order to allow for the possibility of future extension via adding other card games. The broad architecture can be thought of as follows: A game engine (`Memory`), Cards (`Card`), and custom exception for violation of rules (`CustomException`).
+
+The choice of an Object Oriented Programming Language was intentional to reflect how we normally think of and play card games - users interacting with real card objects, with a central game engine that controls for the rules and input/output handling. The `Card` and `CustomException` classes are designed for reusability as consistent frameworks for other card games to be implemented.
+
+Testing is done with JUnit.
 
 ## Screenshots
 
