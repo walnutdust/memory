@@ -1,3 +1,5 @@
+package Memory;
+
 import java.util.*;
 
 /**
@@ -60,34 +62,6 @@ public class Memory {
      * @post returns an instance of the Memory game.
      */
     public Memory() {
-    }
-
-    /**
-     * Prints all the cards flipped up. Used only for debugging purposes.
-     *
-     * @post Prints all the cards flipped up.
-     */
-    private void exposeState() {
-        StringBuilder sb = new StringBuilder();
-        // Column Headers
-        for (int i = 0; i < numCols; i++) {
-            sb.append("\t").append((char) ('A' + i));
-        }
-
-        for (int i = 0; i < numRows; i++) {
-            sb.append("\n" + (i + 1) + "\t"); // Row headers
-
-            for (int j = 0; j < numCols; j++) {
-                if (state[i][j] != null) {
-                    sb.append(state[i][j]);
-                } else {
-                    sb.append("X");
-                }
-
-                sb.append("\t");
-            }
-        }
-        System.out.println(sb.toString());
     }
 
     /**
@@ -183,7 +157,7 @@ public class Memory {
      * @param input - The input to be handled.
      * @pre input is a valid string.
      */
-    private int[] parseCoordinate(String input) throws CustomException {
+    public int[] parseCoordinate(String input) throws CustomException {
         int column = 0, row = 0;
 
         // This if-else statement allows the user to input either 'a1' or '1a'.
@@ -530,7 +504,7 @@ public class Memory {
     /**
      * Runs the game instance, performining input and state management.
      */
-    private void runGame() {
+    public void runGame() {
         while (gameState != Game_State.END_GAME) {
             switch (gameState) {
             // State 1: Help menu
@@ -562,13 +536,5 @@ public class Memory {
         System.out.println("Thank you for playing! Have a great day!");
 
         scanner.close();
-    }
-
-    /**
-     * Main function. Creates an instance of the memory game and runs it.
-     */
-    public static void main(String[] args) {
-        Memory m = new Memory();
-        m.runGame();
     }
 }

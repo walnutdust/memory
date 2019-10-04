@@ -1,3 +1,5 @@
+package Memory;
+
 /**
  * This class is designed to represent playing cards. Cards have a Suit and a
  * corresponding value, and implement an overrided toString funciton to display

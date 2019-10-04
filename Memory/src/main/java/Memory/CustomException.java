@@ -1,3 +1,5 @@
+package Memory;
+
 import java.lang.Exception;
 import java.util.Map;
 import java.util.stream.*;
@@ -28,7 +30,7 @@ public class CustomException extends Exception {
      *       the code.
      */
     public CustomException(int errorCode) {
-        super(errorMessages.get(errorCode));
+        super((errorMessages.containsKey(errorCode)) ? errorMessages.get(errorCode) : "");
         this.errorCode = errorCode;
     }
 
@@ -39,5 +41,14 @@ public class CustomException extends Exception {
      */
     public String toString() {
         return "Error: " + this.getMessage() + "\nError Code:" + this.errorCode;
+    }
+
+    /**
+     * Returns the error code of the CustomException.
+     *
+     * @post returns the error code of the CustomException.
+     */
+    public int getErrorCode() {
+        return errorCode;
     }
 }
